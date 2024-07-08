@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #2e7d32;
+    color: white;
+}
+
+#game {
+    margin-top: 20px;
+}
+
+#cards {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 120px;
+    height: 180px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card .back .value {
+    position: absolute;
+    top: -170px;
+    left: 10px;
+    font-size: 60px; /* 增大數字字體大小 */
+}
+
+.card .back .suit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 90px; /* 增大圖示字體大小 */
+}
+
+.winning {
+    animation: blink 0.5s infinite alternate;
+}
+
+.card.held {
+    border: 5px solid yellow;
+}
+
+.cover{
+    background-image: url('img/cardBack.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotatey(0deg);
+    width: 120px;
+    height: 180px;
+    backface-visibility: hidden;
+    transition: transform .25s ease-in-out;
+}
+
+.back {
+    backface-visibility: hidden;
+    transform: rotatey(-180deg);
+    transition: transform .25s ease-in-out;
+}
+
+.goback {
+    transform: rotatey(180deg);
+}
+
+.gofront {
+    transform: rotatey(0deg);
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#result {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+@keyframes blink {
+    0% {
+        background-image: linear-gradient(to top left, yellow, #f2f2f2);
+    }
+
+    25% {
+        background-image: linear-gradient(to top right, yellow, #f2f2f2);
+    }
+
+    50% {
+        background-image: linear-gradient(to bottom right, yellow, #f2f2f2);
+    }
+
+    75% {
+        background-image: linear-gradient(to bottom left, yellow, #f2f2f2);
+    }
+
+    100% {
+        background-image: linear-gradient(to top left, yellow, #f2f2f2);
+    }
+}
