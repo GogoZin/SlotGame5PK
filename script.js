@@ -55,8 +55,8 @@ function dealCards() {
 
     setTimeout(()=> {
         coverElements.forEach((cv, c_index) => {
+            cardSound.play();
             setTimeout(() => {
-                cardSound.play();
                 cv.classList.add('goback');
                 backElements[c_index].classList.add('gofront');
             }, c_index * 200);
@@ -78,8 +78,8 @@ function drawCards() {
     const backElements = document.querySelectorAll('.back');
     setTimeout(()=> {
         coverElements.forEach((cv, c_index) => {
+            cardSound.play();
             setTimeout(() => {
-                cardSound.play();
                 cv.classList.add('goback');
                 backElements[c_index].classList.add('gofront'); //抽牌動畫
             }, c_index * 200);
